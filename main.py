@@ -7,7 +7,6 @@ from yandex_api import YaUploader
 
 
 def get_profile_photos(owner_id, token):
-
     params = {
         'owner_id': owner_id,
         'access_token': token,
@@ -29,7 +28,6 @@ def get_profile_photos(owner_id, token):
         json_file_data = []
 
         for item in json_output['response']['items'][:5]:
-
             item_with_max_size = get_max_size(*item['sizes'])
             likes = item['likes']['count']
             date = item['date']
@@ -65,7 +63,6 @@ def get_profile_photos(owner_id, token):
 
 
 def get_filename(url, likes, date, json_data):
-
     print('url:', url)
     print('likes:', likes)
     print('date:', date)
@@ -103,6 +100,7 @@ def get_max_size(*sizes):
     sizes_sorted = sorted(sizes, key=lambda item: item['height'])
 
     return sizes_sorted[-1]
+
 
 if __name__ == '__main__':
     owner_id = input('Введите id пользователя VK: ')

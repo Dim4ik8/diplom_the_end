@@ -123,7 +123,6 @@ class YaUploader:
             print('Недостаточно свободного места.')
 
         if status != 202:
-
             error = file_upload_request.json()['error']
             description = file_upload_request.json()['description']
 
